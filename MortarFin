@@ -5,8 +5,17 @@
 </style>
 </head>
 <body>
-<p>Hello World</p>
 <script>
+function crating(){
+var rating = document.getElementById("rating").value
+document.write(rating)
+}
 </script>
+<form action="calcr.php">
+Rating: <input type="text" name="orating" id="rating" value=""><br>
+Opponent's Rating: <input type="text" name="rating" value=""><br>
+Result (1/0/0.5): <input type="text" name="result" value=""><br>
+<input type="button" value="Calculate" onclick="crating()">
+<form>
 </body>
 </html>
