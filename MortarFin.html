@@ -7,14 +7,25 @@
 <body>
 <script>
 function crating(){
-var rating = document.getElementById("rating").value
-document.write(rating)
+  var nrating = 0;
+  var rating = document.getElementById("rating").value
+  var orating = document.getElementById("orating").value
+  var result = document.getElementById("result").value
+  var total = document.getElementById("total").value
+  var ro = 10**(rating/400)
+  var rt = 10**(orating/400)
+  var eo = ro/(ro + rt)
+  var et = rt/(ro + rt)
+  var st = (result - total)*-1
+  nrating = rating + 32 * (result - eo)
+  orating = orating + 32 * (st - et)
 }
 </script>
 <form action="calcr.php">
-Rating: <input type="text" name="orating" id="rating" value=""><br>
-Opponent's Rating: <input type="text" name="rating" value=""><br>
-Result (1/0/0.5): <input type="text" name="result" value=""><br>
+Rating: <input type="text" name="rating" id="rating" value=""><br>
+Opponent's Rating: <input type="text" name="orating" id="orating" value=""><br>
+Result : <input type="text" name="result" value="" id="result"><br>
+Number Of Games : <input type="text" name="total" value="" id="total"><br>
 <input type="button" value="Calculate" onclick="crating()">
 <form>
 </body>
