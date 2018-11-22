@@ -2,31 +2,76 @@
 <head>
 <title>MortarFin</title>
 <style>
+
+table, td {
+    border: 1px solid black;
+}
+
 </style>
 </head>
 <body>
 <script>
+
 function crating(){
   var nrating = 0;
-  var rating = document.getElementById("rating").value
-  var orating = document.getElementById("orating").value
-  var result = document.getElementById("result").value
-  var total = document.getElementById("total").value
+  var rating = parseFloat(document.getElementById("rating").value)
+  var orating = parseFloat(document.getElementById("orating").value)
+  var result = parseFloat(document.getElementById("result").value)
+  var total = parseFloat(document.getElementById("total").value)
   var ro = 10**(rating/400)
   var rt = 10**(orating/400)
-  var eo = ro/(ro + rt)
-  var et = rt/(ro + rt)
+  var eo = ro/(ro + rt)*total
+  var et = rt/(ro + rt)*total
   var st = (result - total)*-1
   nrating = rating + 32 * (result - eo)
   orating = orating + 32 * (st - et)
+  document.getElementById("rinfo").innerHTML = "Updated Rating: " + Math.ceil(nrating)
+  document.getElementById("einfo").innerHTML = "Chance Of Victory: " + Math.floor(100*eo) + "%"
+}
+
+</script>
+
+<form action="calcr.php">
+<input type="text" name="rating" id="rating" value="Rating"><br>
+<input type="text" name="orating" id="orating" value="Opponent's Rating"><br>
+<input type="text" name="result" value="Result" id="result"><br>
+<input type="text" name="total" value="Number Of Games" id="total"><br>
+<input type="button" value="Calculate" onclick="crating()">
+<p id="rinfo"></p>
+<p id="einfo"></p>
+<form>
+
+<table id="tanle">
+</table>
+
+<script>
+var table = document.getElementById("tanle");
+var row = table.insertRow(0);
+var i = 0
+var k = 0
+for(i = 0;i<8;i++){
+var row = table.insertRow(i);
+for(k = 0;k<8;k++){
+var cell = row.insertCell(k);
+if(i%2 == 0){
+if(k%2 == 1){
+cell.style.color = "red";
+}
+if(k%2 == 0){
+cell.color = "red";
+}
+}else{
+if(k%2 == 0){
+cell.style.color = "red";
+}
+if(k%2 == 1){
+cell.color = "red";
+}
+}
+cell.innerHTML = "Chess";
+}
 }
 </script>
-<form action="calcr.php">
-Rating: <input type="text" name="rating" id="rating" value=""><br>
-Opponent's Rating: <input type="text" name="orating" id="orating" value=""><br>
-Result : <input type="text" name="result" value="" id="result"><br>
-Number Of Games : <input type="text" name="total" value="" id="total"><br>
-<input type="button" value="Calculate" onclick="crating()">
-<form>
+
 </body>
 </html>
