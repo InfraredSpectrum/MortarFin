@@ -1,105 +1,52 @@
 <html>
-
 <head>
-
 <title>MortarFin</title>
-
 <style>
-
 body{
-
 background-image: url("Chess.jpg");
 background-size: 100%;
-
 }
-
 table{
-
 position: absolute;
 top: 30%;
 left: 30%;
-
 }
-
 td{
-
 border: 1px solid white;
 color: white;
-
 }
-
-
-
 </style>
-
 </head>
-
 <body>
-
 <script>
-
-
-
 function crating(){
-
   var nrating = 0;
-
   var rating = parseFloat(document.getElementById("rating").value)
-
   var orating = parseFloat(document.getElementById("orating").value)
-
   var result = parseFloat(document.getElementById("result").value)
-
   var total = parseFloat(document.getElementById("total").value)
-
   var ro = 10**(rating/400)
-
   var rt = 10**(orating/400)
-
   var eo = ro/(ro + rt)*total
-
   var eoo = ro/(ro + rt)
-
   var et = rt/(ro + rt)*total
-
   var st = (result - total)*-1
-
   nrating = rating + 32 * (result - eo)
-
   orating = orating + 32 * (st - et)
-
   document.getElementById("rinfo").innerHTML = "Updated Rating: " + Math.ceil(nrating)
-
   document.getElementById("einfo").innerHTML = "Chance Of Victory: " + Math.floor(100*eoo) + "%"
-
 }
-
-
-
 </script>
-
-
-
 <form id="rca">
-
 <input type="text" name="rating" id="rating" value="Rating"><br>
-
 <input type="text" name="orating" id="orating" value="Opponent's Rating"><br>
-
 <input type="text" name="result" value="Result" id="result"><br>
-
 <input type="text" name="total" value="Number Of Games" id="total"><br>
-
 <input type="button" value="Calculate" onclick="crating()">
-
 <p id="rinfo"></p>
-
 <p id="einfo"></p>
-
 </form>
-
 <?php
-
 $k;
 $j;
 $p = 0;
@@ -107,9 +54,7 @@ echo "<table>";
 for($k = 0; $k < 8; $k++){
 echo "<tr></tr>";
 for($j = 0; $j < 8; $j++){
-
 $p++;
-
 if($k%2 == 0){
 if($j%2 == 1){
 echo "<td bgcolor='black' width = '50' height = '50' id='$p'>$p</td>";
@@ -127,9 +72,7 @@ echo "<td bgcolor='red' width = '50' height = '50' id='$p'>$p</td>";
 }
 }
 echo "</table>";
-
 ?>
-
 <script>
 <!--document.getElementById("61").innerHTML = "<img src='WK2.png' alt='' width='50' height='50'>"-->
 var m;
@@ -156,7 +99,6 @@ document.getElementById(62).innerHTML = document.getElementById(62).innerHTML + 
 document.getElementById(63).innerHTML = document.getElementById(63).innerHTML + "Q"
 document.getElementById(64).innerHTML = document.getElementById(64).innerHTML + "R"
 </script>
-
 <script>
 function move(){
 var piece = document.getElementById("piece").value
@@ -167,13 +109,10 @@ document.getElementById(square).innerHTML = document.getElementById(square).inne
 document.getElementById(piece).innerHTML = document.getElementById(piece).innerHTML.slice(0,-1)
 }
 </script>
-
 <form>
 <input type="text" value="Piece" id="piece">
 <input type="text" value="Square" id="square">
 <input type="button" value="Move" onclick="move()">
 </form>
-
 </body>
-
 </html>
