@@ -57,16 +57,16 @@ for($j = 0; $j < 8; $j++){
 $p++;
 if($k%2 == 0){
 if($j%2 == 1){
-echo "<td bgcolor='black' width = '50' height = '50' id='$p'>$p</td>";
+echo "<td bgcolor='black' width = '50' height = '50' id='$p'></td>";
 }else{
-echo "<td bgcolor='red' width = '50' height = '50' id='$p'>$p</td>";
+echo "<td bgcolor='red' width = '50' height = '50' id='$p'></td>";
 }
 }
 if($k%2 == 1){
 if($j%2 == 0){
-echo "<td bgcolor='black' width = '50' height = '50' id='$p'>$p</td>";
+echo "<td bgcolor='black' width = '50' height = '50' id='$p'></td>";
 }else{
-echo "<td bgcolor='red' width = '50' height = '50' id='$p'>$p</td>";
+echo "<td bgcolor='red' width = '50' height = '50' id='$p'></td>";
 }
 }
 }
@@ -74,39 +74,21 @@ echo "<td bgcolor='red' width = '50' height = '50' id='$p'>$p</td>";
 echo "</table>";
 ?>
 <script>
-<!--document.getElementById("61").innerHTML = "<img src='WK2.png' alt='' width='50' height='50'>"-->
 var m;
 for(m = 9;m<17;m++){
-document.getElementById(m).innerHTML = document.getElementById(m).innerHTML + "S"
+document.getElementById(m).innerHTML = "<img src='/images/user.png' alt='' width='50' height='50'>"
 }
 for(m = 49;m<57;m++){
-document.getElementById(m).innerHTML = document.getElementById(m).innerHTML + "W"
+document.getElementById(m).innerHTML = "<img src='/images/user.png' alt='' width='50' height='50'>"
 }
-document.getElementById(1).innerHTML = document.getElementById(1).innerHTML + "R"
-document.getElementById(2).innerHTML = document.getElementById(2).innerHTML + "N"
-document.getElementById(3).innerHTML = document.getElementById(3).innerHTML + "B"
-document.getElementById(4).innerHTML = document.getElementById(4).innerHTML + "Q"
-document.getElementById(5).innerHTML = document.getElementById(5).innerHTML + "K"
-document.getElementById(6).innerHTML = document.getElementById(6).innerHTML + "B"
-document.getElementById(7).innerHTML = document.getElementById(7).innerHTML + "N"
-document.getElementById(8).innerHTML = document.getElementById(8).innerHTML + "R"
-document.getElementById(57).innerHTML = document.getElementById(57).innerHTML + "R"
-document.getElementById(58).innerHTML = document.getElementById(58).innerHTML + "N"
-document.getElementById(59).innerHTML = document.getElementById(59).innerHTML + "B"
-document.getElementById(60).innerHTML = document.getElementById(60).innerHTML + "Q"
-document.getElementById(61).innerHTML = document.getElementById(61).innerHTML + "K"
-document.getElementById(62).innerHTML = document.getElementById(62).innerHTML + "B"
-document.getElementById(63).innerHTML = document.getElementById(63).innerHTML + "Q"
-document.getElementById(64).innerHTML = document.getElementById(64).innerHTML + "R"
 </script>
 <script>
 function move(){
 var piece = document.getElementById("piece").value
 var square = document.getElementById("square").value
 var piecee = document.getElementById(piece).innerHTML
-var pieceee = piecee.slice(piecee.length-1)
-document.getElementById(square).innerHTML = document.getElementById(square).innerHTML + pieceee
-document.getElementById(piece).innerHTML = document.getElementById(piece).innerHTML.slice(0,-1)
+document.getElementById(square).innerHTML = piecee
+document.getElementById(piece).innerHTML = ""
 }
 </script>
 <form>
