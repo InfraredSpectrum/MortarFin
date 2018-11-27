@@ -76,24 +76,6 @@ for($k = 0; $k < 8; $k++){
 }
 echo "</table>";
 ?>
-<script>
-var m;
-for(m = 9;m<17;m++){
-	document.getElementById(m).innerHTML = "<img src='/images/user.png' alt='' width='50' height='50'>"
-}
-for(m = 49;m<57;m++){
-	document.getElementById(m).innerHTML = "<img src='/images/user.png' alt='' width='50' height='50'>"
-}
-</script>
-<script>
-function move(){
-	var piece = document.getElementById("piece").value
-	var square = document.getElementById("square").value
-	var piecee = document.getElementById(piece).innerHTML
-	document.getElementById(square).innerHTML = piecee
-	document.getElementById(piece).innerHTML = ""
-}
-</script>
 <form>
 <input type="text" value="Piece" id="piece">
 <input type="text" value="Square" id="square">
