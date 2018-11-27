@@ -22,6 +22,47 @@ td:hover{
 </head>
 <body>
 <script>
+var pawn = {
+    location = ""
+    captured = false
+    dmove = true
+    move = true
+    colour = "white"
+}
+var king = {
+    location = ""
+    check = false
+    checkmate = false
+    move = true
+    colour = "white"
+    kcastle = true
+    qcastle = true
+}
+var queen = {
+    location = ""
+    captured = false
+    move = true
+    colour = "white"
+}
+var bishop = {
+    location = ""
+    captured = false
+    move = true
+    colour = "white"
+    mcolour = "white"
+}
+var knight = {
+    location = ""
+    captured = false
+    move = true
+    colour = "white"
+}
+var rook = {
+    location = ""
+    captured = false
+    move = true
+    colour = "white"
+}
 function crating(){
 	var nrating = 0;
 	var rating = parseFloat(document.getElementById("rating").value)
