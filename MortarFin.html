@@ -3,38 +3,41 @@
 <title>MortarFin</title>
 <style>
 body{
-background-image: url("Chess.jpg");
-background-size: 100%;
+	background-image: url("Chess.jpg");
+	background-size: 100%;
 }
 table{
-position: absolute;
-top: 30%;
-left: 30%;
+	position: absolute;
+	top: 30%;
+	left: 30%;
 }
 td{
-border: 1px solid white;
-color: white;
+	border: 1px solid white;
+	color: white;
+}
+td:hover{
+	background-color: green;
 }
 </style>
 </head>
 <body>
 <script>
 function crating(){
-  var nrating = 0;
-  var rating = parseFloat(document.getElementById("rating").value)
-  var orating = parseFloat(document.getElementById("orating").value)
-  var result = parseFloat(document.getElementById("result").value)
-  var total = parseFloat(document.getElementById("total").value)
-  var ro = 10**(rating/400)
-  var rt = 10**(orating/400)
-  var eo = ro/(ro + rt)*total
-  var eoo = ro/(ro + rt)
-  var et = rt/(ro + rt)*total
-  var st = (result - total)*-1
-  nrating = rating + 32 * (result - eo)
-  orating = orating + 32 * (st - et)
-  document.getElementById("rinfo").innerHTML = "Updated Rating: " + Math.ceil(nrating)
-  document.getElementById("einfo").innerHTML = "Chance Of Victory: " + Math.floor(100*eoo) + "%"
+	var nrating = 0;
+	var rating = parseFloat(document.getElementById("rating").value)
+	var orating = parseFloat(document.getElementById("orating").value)
+	var result = parseFloat(document.getElementById("result").value)
+	var total = parseFloat(document.getElementById("total").value)
+	var ro = 10**(rating/400)
+	var rt = 10**(orating/400)
+	var eo = ro/(ro + rt)*total
+	var eoo = ro/(ro + rt)
+	var et = rt/(ro + rt)*total
+	var st = (result - total)*-1
+	nrating = rating + 32 * (result - eo)
+	orating = orating + 32 * (st - et)
+	document.getElementById("rinfo").innerHTML = "Updated Rating: " + Math.ceil(nrating)
+	document.getElementById("einfo").innerHTML = "Chance Of Victory: " + Math.floor(100*eoo) + "%"
 }
 </script>
 <form id="rca">
@@ -52,22 +55,22 @@ $j;
 $p = 0;
 echo "<table>";
 for($k = 0; $k < 8; $k++){
-echo "<tr></tr>";
-for($j = 0; $j < 8; $j++){
-$p++;
-if($k%2 == 0){
-if($j%2 == 1){
-echo "<td bgcolor='black' width = '50' height = '50' id='$p'></td>";
-}else{
-echo "<td bgcolor='red' width = '50' height = '50' id='$p'></td>";
-}
-}
-if($k%2 == 1){
-if($j%2 == 0){
-echo "<td bgcolor='black' width = '50' height = '50' id='$p'></td>";
-}else{
-echo "<td bgcolor='red' width = '50' height = '50' id='$p'></td>";
-}
+	echo "<tr></tr>";
+	for($j = 0; $j < 8; $j++){
+		$p++;
+		if($k%2 == 0){
+		if($j%2 == 1){
+			echo "<td bgcolor='black' width = '50' height = '50' id='$p'></td>";
+		}else{
+			echo "<td bgcolor='red' width = '50' height = '50' id='$p'></td>";
+		}
+	}
+	if($k%2 == 1){
+	if($j%2 == 0){
+		echo "<td bgcolor='black' width = '50' height = '50' id='$p'></td>";
+	}else{
+		echo "<td bgcolor='red' width = '50' height = '50' id='$p'></td>";
+	}
 }
 }
 }
@@ -76,19 +79,19 @@ echo "</table>";
 <script>
 var m;
 for(m = 9;m<17;m++){
-document.getElementById(m).innerHTML = "<img src='/images/user.png' alt='' width='50' height='50'>"
+	document.getElementById(m).innerHTML = "<img src='/images/user.png' alt='' width='50' height='50'>"
 }
 for(m = 49;m<57;m++){
-document.getElementById(m).innerHTML = "<img src='/images/user.png' alt='' width='50' height='50'>"
+	document.getElementById(m).innerHTML = "<img src='/images/user.png' alt='' width='50' height='50'>"
 }
 </script>
 <script>
 function move(){
-var piece = document.getElementById("piece").value
-var square = document.getElementById("square").value
-var piecee = document.getElementById(piece).innerHTML
-document.getElementById(square).innerHTML = piecee
-document.getElementById(piece).innerHTML = ""
+	var piece = document.getElementById("piece").value
+	var square = document.getElementById("square").value
+	var piecee = document.getElementById(piece).innerHTML
+	document.getElementById(square).innerHTML = piecee
+	document.getElementById(piece).innerHTML = ""
 }
 </script>
 <form>
