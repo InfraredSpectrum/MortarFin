@@ -63,9 +63,6 @@ var rook = {
     move = true
     colour = "white"
 }
-function select(id){
-    alert("Hi")
-}
 function crating(){
 	var nrating = 0;
 	var rating = parseFloat(document.getElementById("rating").value)
@@ -104,16 +101,16 @@ for($k = 0; $k < 8; $k++){
 		$p++;
 		if($k%2 == 0){
 		if($j%2 == 1){
-			echo "<td bgcolor='black' width = '50' height = '50' id='$p' onclick='select()'></td>";
+			echo "<td bgcolor='black' width = '50' height = '50' id='$p'></td>";
 		}else{
-			echo "<td bgcolor='red' width = '50' height = '50' id='$p' onclick='select()'></td>";
+			echo "<td bgcolor='red' width = '50' height = '50' id='$p'></td>";
 		}
 	}
 	if($k%2 == 1){
 	if($j%2 == 0){
-		echo "<td bgcolor='black' width = '50' height = '50' id='$p' onclick='select()'></td>";
+		echo "<td bgcolor='black' width = '50' height = '50' id='$p'></td>";
 	}else{
-		echo "<td bgcolor='red' width = '50' height = '50' id='$p' onclick='select()'></td>";
+		echo "<td bgcolor='red' width = '50' height = '50' id='$p'></td>";
 	}
 }
 }
