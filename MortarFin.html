@@ -18,12 +18,53 @@ td{
 td:hover{
 	background-color: green;
 }
-.pawnWA {
+.pawnW {
 	width: 0;
 	height: 0;
 	border-left: 25px solid transparent;
 	border-right: 25px solid transparent;
-	border-bottom: 50px solid #555;
+	border-bottom: 50px solid #FFFFFF;
+}
+.pawnB {
+	width: 0;
+	height: 0;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	border-top: 50px solid #000000;
+}
+.KingW {
+  height: 40px;
+  width: 40px;
+  background-color: white;
+}
+.KingB {
+  height: 40px;
+  width: 40px;
+  background-color: black;
+}
+.QueenW {
+  height: 50px;
+  width: 50px;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+}
+.QueenB {
+  height: 50px;
+  width: 50px;
+  background-color: #000000;
+  border-radius: 50%;
+}
+.BishopW {
+  height: 50px;
+  width: 25px;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+}
+.BishopB {
+  height: 50px;
+  width: 25px;
+  background-color: #000000;
+  border-radius: 50%;
 }
 </style>
 </head>
@@ -48,14 +89,14 @@ for($k = 0; $k < 8; $k++){
 		$p++;
 		if($k%2 == 0){
 		if($j%2 == 1){
-			echo "<td bgcolor='black' width = '50' height = '50' id='$p'></td>";
+			echo "<td bgcolor='grey' width = '50' height = '50' id='$p'></td>";
 		}else{
 			echo "<td bgcolor='red' width = '50' height = '50' id='$p'></td>";
 		}
 	}
 	if($k%2 == 1){
 	if($j%2 == 0){
-		echo "<td bgcolor='black' width = '50' height = '50' id='$p'></td>";
+		echo "<td bgcolor='grey' width = '50' height = '50' id='$p'></td>";
 	}else{
 		echo "<td bgcolor='red' width = '50' height = '50' id='$p'></td>";
 	}
@@ -65,15 +106,123 @@ for($k = 0; $k < 8; $k++){
 echo "</table>";
 ?>
 <script>
+//WhitePawns
 var pawnWA = {
-    location: "64",
+    location: "56",
     captured: false,
     dmove: true,
     move: true,
     colour: "white"
 };
-var king = {
-    location: "",
+var pawnWB = {
+    location: "55",
+    captured: false,
+    dmove: true,
+    move: true,
+    colour: "white"
+};
+var pawnWC = {
+    location: "54",
+    captured: false,
+    dmove: true,
+    move: true,
+    colour: "white"
+};
+var pawnWD = {
+    location: "53",
+    captured: false,
+    dmove: true,
+    move: true,
+    colour: "white"
+};
+var pawnWE = {
+    location: "52",
+    captured: false,
+    dmove: true,
+    move: true,
+    colour: "white"
+};
+var pawnWF = {
+    location: "51",
+    captured: false,
+    dmove: true,
+    move: true,
+    colour: "white"
+};
+var pawnWG = {
+    location: "50",
+    captured: false,
+    dmove: true,
+    move: true,
+    colour: "white"
+};
+var pawnWH = {
+    location: "49",
+    captured: false,
+    dmove: true,
+    move: true,
+    colour: "white"
+};
+//Black Pawns
+var pawnBA = {
+    location: "9",
+    captured: false,
+    dmove: true,
+    move: true,
+    colour: "white"
+};
+var pawnBB = {
+    location: "10",
+    captured: false,
+    dmove: true,
+    move: true,
+    colour: "white"
+};
+var pawnBC = {
+    location: "11",
+    captured: false,
+    dmove: true,
+    move: true,
+    colour: "white"
+};
+var pawnBD = {
+    location: "12",
+    captured: false,
+    dmove: true,
+    move: true,
+    colour: "white"
+};
+var pawnBE = {
+    location: "13",
+    captured: false,
+    dmove: true,
+    move: true,
+    colour: "white"
+};
+var pawnBF = {
+    location: "14",
+    captured: false,
+    dmove: true,
+    move: true,
+    colour: "white"
+};
+var pawnBG = {
+    location: "15",
+    captured: false,
+    dmove: true,
+    move: true,
+    colour: "white"
+};
+var pawnBH = {
+    location: "16",
+    captured: false,
+    dmove: true,
+    move: true,
+    colour: "white"
+};
+//Kings
+var kingW = {
+    location: "61",
     check: false,
     checkmate: false,
     move: true,
@@ -81,14 +230,52 @@ var king = {
     kcastle: true,
     qcastle: true
 };
-var queen = {
-    location: "",
+var kingB = {
+    location: "5",
+    check: false,
+    checkmate: false,
+    move: true,
+    colour: "white",
+    kcastle: true,
+    qcastle: true
+};
+//Queens
+var queenW = {
+    location: "60",
     captured: false,
     move: true,
     colour: "white"
 };
-var bishop = {
-    location: "",
+var queenB = {
+    location: "4",
+    captured: false,
+    move: true,
+    colour: "white"
+};
+//Bishops
+var bishopWL = {
+    location: "62",
+    captured: false,
+    move: true,
+    colour: "white",
+    mcolour: "white"
+};
+var bishopWD = {
+    location: "59",
+    captured: false,
+    move: true,
+    colour: "white",
+    mcolour: "white"
+};
+var bishopBL = {
+    location: "6",
+    captured: false,
+    move: true,
+    colour: "white",
+    mcolour: "white"
+};
+var bishopBD = {
+    location: "3",
     captured: false,
     move: true,
     colour: "white",
@@ -106,6 +293,35 @@ var rook = {
     move: true,
     colour: "white"
 };
+//WhitePawns
+document.getElementById(pawnWA.location).innerHTML = "<div class='pawnW'></div>"
+document.getElementById(pawnWB.location).innerHTML = "<div class='pawnW'></div>"
+document.getElementById(pawnWC.location).innerHTML = "<div class='pawnW'></div>"
+document.getElementById(pawnWD.location).innerHTML = "<div class='pawnW'></div>"
+document.getElementById(pawnWE.location).innerHTML = "<div class='pawnW'></div>"
+document.getElementById(pawnWF.location).innerHTML = "<div class='pawnW'></div>"
+document.getElementById(pawnWG.location).innerHTML = "<div class='pawnW'></div>"
+document.getElementById(pawnWH.location).innerHTML = "<div class='pawnW'></div>"
+//BlackPawns
+document.getElementById(pawnBA.location).innerHTML = "<div class='pawnB'></div>"
+document.getElementById(pawnBB.location).innerHTML = "<div class='pawnB'></div>"
+document.getElementById(pawnBC.location).innerHTML = "<div class='pawnB'></div>"
+document.getElementById(pawnBD.location).innerHTML = "<div class='pawnB'></div>"
+document.getElementById(pawnBE.location).innerHTML = "<div class='pawnB'></div>"
+document.getElementById(pawnBF.location).innerHTML = "<div class='pawnB'></div>"
+document.getElementById(pawnBG.location).innerHTML = "<div class='pawnB'></div>"
+document.getElementById(pawnBH.location).innerHTML = "<div class='pawnB'></div>"
+//Kings
+document.getElementById(kingW.location).innerHTML = "<div class='KingW'></div>"
+document.getElementById(kingB.location).innerHTML = "<div class='KingB'></div>"
+//Queens
+document.getElementById(queenW.location).innerHTML = "<div class='QueenW'></div>"
+document.getElementById(queenB.location).innerHTML = "<div class='QueenB'></div>"
+//Bishops
+document.getElementById(bishopBL.location).innerHTML = "<div class='BishopB'></div>"
+document.getElementById(bishopBD.location).innerHTML = "<div class='BishopB'></div>"
+document.getElementById(bishopWL.location).innerHTML = "<div class='BishopW'></div>"
+document.getElementById(bishopWD.location).innerHTML = "<div class='BishopW'></div>"
 function crating(){
 	var nrating = 0;
 	var rating = parseFloat(document.getElementById("rating").value)
