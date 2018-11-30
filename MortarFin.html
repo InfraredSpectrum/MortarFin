@@ -134,8 +134,11 @@ echo "</table>";
 <script>
 function moves(thingy){
     var i
-    for(i = 0;i = thingy%8;i++){
+    for(i = 0;i < thingy%8;i++){
         document.getElementById(thingy - i).style.backgroundColor = "yellow"
+    }
+    for(i = 0; i <= (8-(thingy%8));i++){
+        document.getElementById(thingy + i).style.backgroundColor = "yellow"
     }
 }
 //WhitePawns
