@@ -66,6 +66,32 @@ td:hover{
   background-color: #000000;
   border-radius: 50%;
 }
+.KnightB {
+	width: 30px;
+	height: 50px;
+	transform: skew(20deg);
+	background: #000000;
+}
+.KnightW {
+	width: 30px;
+	height: 50px;
+	transform: skew(20deg);
+	background: #FFFFFF;
+}
+.RookW {
+	border-bottom: 30px solid #FFFFFF;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	height: 0;
+	width: 20px;
+}
+.RookB {
+	border-bottom: 30px solid #000000;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	height: 0;
+	width: 20px;
+}
 </style>
 </head>
 <body>
@@ -106,6 +132,12 @@ for($k = 0; $k < 8; $k++){
 echo "</table>";
 ?>
 <script>
+function moves(thingy){
+    var i
+    for(i = 0;i = thingy%8;i++){
+        document.getElementById(thingy - i).style.backgroundColor = "yellow"
+    }
+}
 //WhitePawns
 var pawnWA = {
     location: "56",
@@ -281,14 +313,52 @@ var bishopBD = {
     colour: "white",
     mcolour: "white"
 };
-var knight = {
-    location: "",
+//Knights
+var knightWL = {
+    location: "58",
     captured: false,
     move: true,
     colour: "white"
 };
-var rook = {
-    location: "",
+var knightWD = {
+    location: "63",
+    captured: false,
+    move: true,
+    colour: "white"
+};
+var knightBL = {
+    location: "7",
+    captured: false,
+    move: true,
+    colour: "white"
+};
+var knightBD = {
+    location: "2",
+    captured: false,
+    move: true,
+    colour: "white"
+};
+//Rooks
+var rookWL = {
+    location: "57",
+    captured: false,
+    move: true,
+    colour: "white"
+};
+var rookWD = {
+    location: "37",
+    captured: false,
+    move: true,
+    colour: "white"
+};
+var rookBD = {
+    location: "8",
+    captured: false,
+    move: true,
+    colour: "white"
+};
+var rookBL = {
+    location: "1",
     captured: false,
     move: true,
     colour: "white"
@@ -322,6 +392,16 @@ document.getElementById(bishopBL.location).innerHTML = "<div class='BishopB'></d
 document.getElementById(bishopBD.location).innerHTML = "<div class='BishopB'></div>"
 document.getElementById(bishopWL.location).innerHTML = "<div class='BishopW'></div>"
 document.getElementById(bishopWD.location).innerHTML = "<div class='BishopW'></div>"
+//Knights
+document.getElementById(knightBL.location).innerHTML = "<div class='KnightB'></div>"
+document.getElementById(knightBD.location).innerHTML = "<div class='KnightB'></div>"
+document.getElementById(knightWL.location).innerHTML = "<div class='KnightW'></div>"
+document.getElementById(knightWD.location).innerHTML = "<div class='KnightW'></div>"
+//Rooks
+document.getElementById(rookBL.location).innerHTML = "<div class='RookB'</div>"
+document.getElementById(rookBD.location).innerHTML = "<div class='RookB'></div>"
+document.getElementById(rookWL.location).innerHTML = "<div class='RookW'></div>"
+document.getElementById(rookWD.location).innerHTML = "<div class='RookW' onclick='moves(rookWD.location)'></div>"
 function crating(){
 	var nrating = 0;
 	var rating = parseFloat(document.getElementById("rating").value)
