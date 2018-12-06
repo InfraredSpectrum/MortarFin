@@ -132,13 +132,12 @@ for($k = 0; $k < 8; $k++){
 echo "</table>";
 ?>
 <script>
-function moves(thingy){
-    var i
-    for(i = 0;i < thingy%8;i++){
-        document.getElementById(thingy - i).style.backgroundColor = "yellow"
-    }
-    for(i = 0; i <= (8-(thingy%8));i++){
-        document.getElementById(thingy + i).style.backgroundColor = "yellow"
+function pawnm(thingy){
+    alert(thingy)
+    if(1 <= parseInt(thingy)){
+        document.getElementById(parseInt(thingy) - parseInt(8)).style.backgroundColor = "green"
+    }else{
+        alert("Oof")
     }
 }
 //WhitePawns
@@ -349,7 +348,7 @@ var rookWL = {
     colour: "white"
 };
 var rookWD = {
-    location: "37",
+    location: "64",
     captured: false,
     move: true,
     colour: "white"
@@ -367,7 +366,7 @@ var rookBL = {
     colour: "white"
 };
 //WhitePawns
-document.getElementById(pawnWA.location).innerHTML = "<div class='pawnW'></div>"
+document.getElementById(pawnWA.location).innerHTML = "<div class='pawnW' onClick='pawnm(this.location)'></div>"
 document.getElementById(pawnWB.location).innerHTML = "<div class='pawnW'></div>"
 document.getElementById(pawnWC.location).innerHTML = "<div class='pawnW'></div>"
 document.getElementById(pawnWD.location).innerHTML = "<div class='pawnW'></div>"
@@ -404,7 +403,7 @@ document.getElementById(knightWD.location).innerHTML = "<div class='KnightW'></d
 document.getElementById(rookBL.location).innerHTML = "<div class='RookB'</div>"
 document.getElementById(rookBD.location).innerHTML = "<div class='RookB'></div>"
 document.getElementById(rookWL.location).innerHTML = "<div class='RookW'></div>"
-document.getElementById(rookWD.location).innerHTML = "<div class='RookW' onclick='moves(rookWD.location)'></div>"
+document.getElementById(rookWD.location).innerHTML = "<div class='RookW'></div>"
 function crating(){
 	var nrating = 0;
 	var rating = parseFloat(document.getElementById("rating").value)
