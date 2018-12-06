@@ -133,12 +133,18 @@ echo "</table>";
 ?>
 <script>
 function pawnm(thingy){
-    alert(thingy)
-    if(1 <= parseInt(thingy)){
-        document.getElementById(parseInt(thingy) - parseInt(8)).style.backgroundColor = "green"
-    }else{
-        alert("Oof")
+    if(48 <= thingy.location && thingy.location <= 56  && thingy.colour == "white"){
+        var fs = document.getElementById(parseInt(thingy.location) - 8).style.backgroundColor
+        var ss = document.getElementById(parseInt(thingy.location) - 16).style.backgroundColor
+        document.getElementById(parseInt(thingy.location) - 8).style.backgroundColor = "green"
+        document.getElementById(parseInt(thingy.location) - 16).style.backgroundColor = "green"
+    }else if(8 <= thingy.location && thingy.location <= 16  && thingy.colour == "black"){
+        document.getElementById(parseInt(thingy.location) + 8).style.backgroundColor = "green"
+        document.getElementById(parseInt(thingy.location) + 16).style.backgroundColor = "green"
     }
+    setTimeout(3000)
+    document.getElementById(parseInt(thingy.location) - 8).style.backgroundColor = fs
+    document.getElementById(parseInt(thingy.location) - 16).style.backgroundColor = ss
 }
 //WhitePawns
 var pawnWA = {
@@ -203,56 +209,56 @@ var pawnBA = {
     captured: false,
     dmove: true,
     move: true,
-    colour: "white"
+    colour: "black"
 };
 var pawnBB = {
     location: "10",
     captured: false,
     dmove: true,
     move: true,
-    colour: "white"
+    colour: "black"
 };
 var pawnBC = {
     location: "11",
     captured: false,
     dmove: true,
     move: true,
-    colour: "white"
+    colour: "black"
 };
 var pawnBD = {
     location: "12",
     captured: false,
     dmove: true,
     move: true,
-    colour: "white"
+    colour: "black"
 };
 var pawnBE = {
     location: "13",
     captured: false,
     dmove: true,
     move: true,
-    colour: "white"
+    colour: "black"
 };
 var pawnBF = {
     location: "14",
     captured: false,
     dmove: true,
     move: true,
-    colour: "white"
+    colour: "black"
 };
 var pawnBG = {
     location: "15",
     captured: false,
     dmove: true,
     move: true,
-    colour: "white"
+    colour: "black"
 };
 var pawnBH = {
     location: "16",
     captured: false,
     dmove: true,
     move: true,
-    colour: "white"
+    colour: "black"
 };
 //Kings
 var kingW = {
@@ -366,23 +372,23 @@ var rookBL = {
     colour: "white"
 };
 //WhitePawns
-document.getElementById(pawnWA.location).innerHTML = "<div class='pawnW' onClick='pawnm(this.location)'></div>"
-document.getElementById(pawnWB.location).innerHTML = "<div class='pawnW'></div>"
-document.getElementById(pawnWC.location).innerHTML = "<div class='pawnW'></div>"
-document.getElementById(pawnWD.location).innerHTML = "<div class='pawnW'></div>"
-document.getElementById(pawnWE.location).innerHTML = "<div class='pawnW'></div>"
-document.getElementById(pawnWF.location).innerHTML = "<div class='pawnW'></div>"
-document.getElementById(pawnWG.location).innerHTML = "<div class='pawnW'></div>"
-document.getElementById(pawnWH.location).innerHTML = "<div class='pawnW'></div>"
+document.getElementById(pawnWA.location).innerHTML = "<div class='pawnW' onClick='pawnm(pawnWA)'></div>"
+document.getElementById(pawnWB.location).innerHTML = "<div class='pawnW' onClick='pawnm(pawnWB)'></div>"
+document.getElementById(pawnWC.location).innerHTML = "<div class='pawnW' onClick='pawnm(pawnWC)'></div>"
+document.getElementById(pawnWD.location).innerHTML = "<div class='pawnW' onClick='pawnm(pawnWD)'></div>"
+document.getElementById(pawnWE.location).innerHTML = "<div class='pawnW' onClick='pawnm(pawnWE)'></div>"
+document.getElementById(pawnWF.location).innerHTML = "<div class='pawnW' onClick='pawnm(pawnWF)'></div>"
+document.getElementById(pawnWG.location).innerHTML = "<div class='pawnW' onClick='pawnm(pawnWG)'></div>"
+document.getElementById(pawnWH.location).innerHTML = "<div class='pawnW' onClick='pawnm(pawnWH)'></div>"
 //BlackPawns
-document.getElementById(pawnBA.location).innerHTML = "<div class='pawnB'></div>"
-document.getElementById(pawnBB.location).innerHTML = "<div class='pawnB'></div>"
-document.getElementById(pawnBC.location).innerHTML = "<div class='pawnB'></div>"
-document.getElementById(pawnBD.location).innerHTML = "<div class='pawnB'></div>"
-document.getElementById(pawnBE.location).innerHTML = "<div class='pawnB'></div>"
-document.getElementById(pawnBF.location).innerHTML = "<div class='pawnB'></div>"
-document.getElementById(pawnBG.location).innerHTML = "<div class='pawnB'></div>"
-document.getElementById(pawnBH.location).innerHTML = "<div class='pawnB'></div>"
+document.getElementById(pawnBA.location).innerHTML = "<div class='pawnB' onClick='pawnm(pawnBA)'></div>"
+document.getElementById(pawnBB.location).innerHTML = "<div class='pawnB' onClick='pawnm(pawnBB)'></div>"
+document.getElementById(pawnBC.location).innerHTML = "<div class='pawnB' onClick='pawnm(pawnBC)'></div>"
+document.getElementById(pawnBD.location).innerHTML = "<div class='pawnB' onClick='pawnm(pawnBD)'></div>"
+document.getElementById(pawnBE.location).innerHTML = "<div class='pawnB' onClick='pawnm(pawnBE)'></div>"
+document.getElementById(pawnBF.location).innerHTML = "<div class='pawnB' onClick='pawnm(pawnBF)'></div>"
+document.getElementById(pawnBG.location).innerHTML = "<div class='pawnB' onClick='pawnm(pawnBG)'></div>"
+document.getElementById(pawnBH.location).innerHTML = "<div class='pawnB' onClick='pawnm(pawnBH)'></div>"
 //Kings
 document.getElementById(kingW.location).innerHTML = "<div class='KingW'></div>"
 document.getElementById(kingB.location).innerHTML = "<div class='KingB'></div>"
